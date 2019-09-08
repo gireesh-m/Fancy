@@ -293,9 +293,6 @@ void driveOp(){
   int rJoy = master.get_analog(ANALOG_RIGHT_Y);
   left(lJoy);
   right(rJoy);
-  if (master.get_digital(DIGITAL_A)) {
-    visionAlignment();
-  }
   if (master.get_digital(DIGITAL_UP)) {
     if (konami == 0 || konami == 1){
       konami ++;

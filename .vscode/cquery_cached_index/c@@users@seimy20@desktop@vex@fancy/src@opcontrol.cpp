@@ -14,9 +14,9 @@
  * task, not resume it from where it left off.
  */
 
- Controller master(CONTROLLER_MASTER);
+Controller master(CONTROLLER_MASTER);
 
-using okapi::literals::operator""_in;
+/*using okapi::literals::operator""_in;
 using okapi::literals::operator""_ft;
 using okapi::literals::operator""_deg;
  auto myChassis = okapi::ChassisControllerFactory::create(
@@ -32,20 +32,23 @@ using okapi::literals::operator""_deg;
    2.0,  // Maximum linear acceleration of the Chassis in m/s/s
    10.0, // Maximum linear jerk of the Chassis in m/s/s/s
    myChassis // Chassis Controller
- );
+ );*/
 
 
 
 void opcontrol() {
 	while (true){
 
+    driveOp();
+    intakeOp();
+    liftOp();
 
-			if (master.get_digital(DIGITAL_X) && !competition::is_connected()){
-				profileController.generatePath({okapi::Point{0_ft, 0_ft, 0_deg}, okapi::Point{3_ft, 1_ft, 0_deg}}, "A");
-  			profileController.setTarget("A");
-  			profileController.waitUntilSettled();
+		/*if (master.get_digital(DIGITAL_X) && !competition::is_connected()){
+			profileController.generatePath({okapi::Point{0_ft, 0_ft, 0_deg}, okapi::Point{3_ft, 1_ft, 0_deg}}, "A");
+			profileController.setTarget("A");
+			profileController.waitUntilSettled();
 
-			}
-			delay(10);
-		}
+		}*/
+		delay(10);
+	}
 }

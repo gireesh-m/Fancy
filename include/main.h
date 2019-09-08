@@ -44,6 +44,8 @@
 //#include "pros/api_legacy.h"
 #include "gui.hpp"
 #include "drive.hpp"
+#include "intake.hpp"
+#include "intakelift.hpp"
 
 //ports
 #define LEFTFRONT 3
