@@ -46,6 +46,7 @@
 #include "drive.hpp"
 #include "intake.hpp"
 #include "intakelift.hpp"
+#include "ramp.hpp"
 
 //ports
 #define LEFTFRONT 3
@@ -55,6 +56,7 @@
 #define INTAKELEFT 11
 #define INTAKERIGHT 12
 #define INTAKELIFT 13
+#define RAMP 14
 #define POTENTIOMETER_PORT 'A'
 
 
