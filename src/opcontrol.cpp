@@ -42,6 +42,7 @@ void opcontrol() {
     driveOp();
     intakeOp();
     liftOp();
+    rampOp();
 
 		/*if (master.get_digital(DIGITAL_X) && !competition::is_connected()){
 			profileController.generatePath({okapi::Point{0_ft, 0_ft, 0_deg}, okapi::Point{3_ft, 1_ft, 0_deg}}, "A");

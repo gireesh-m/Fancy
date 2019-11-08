@@ -12,10 +12,10 @@ void intakeOp(){
   static int vel;
   // up
   if(master.get_digital(DIGITAL_L1)){ // checks that the flipper is not dangerously far down
-    vel = 110;
+    vel = 100;
   // down
-} else if(master.get_digital(DIGITAL_R1)){ // checks that the flipper is not dangerously far up
-    vel = -110;
+  } else if(master.get_digital(DIGITAL_R1)){ // checks that the flipper is not dangerously far up
+    vel = -30;
   } else{
     vel = 0;
   }

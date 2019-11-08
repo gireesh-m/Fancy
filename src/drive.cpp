@@ -97,12 +97,12 @@ void rightSlew(int rightTarget){
 /**************************************************/
 //slop correction
 //probably get rid of this cause its bad
-void slop(int sp){
+/*void slop(int sp){
   if(sp < 0){
     right(-40);
     delay(100);
   }
-}
+}*/
 
 /**************************************************/
 //feedback
@@ -144,7 +144,7 @@ bool isDriving(){
 /**************************************************/
 //autonomous functions
 void driveAsync(int sp){
-  slop(sp);
+  //slop(sp);
   reset();
   driveTarget = sp;
   driveMode = true;
@@ -293,46 +293,4 @@ void driveOp(){
   int rJoy = master.get_analog(ANALOG_RIGHT_Y);
   left(lJoy);
   right(rJoy);
-  if (master.get_digital(DIGITAL_UP)) {
-    if (konami == 0 || konami == 1){
-      konami ++;
-    } else if (konami != 2) {
-      konami = 0;
-    }
-  } else if (master.get_digital(DIGITAL_DOWN)){
-    if (konami == 2 || konami == 3){
-      konami ++;
-    } else if (konami != 4) {
-      konami = 0;
-    }
-  } else if (master.get_digital(DIGITAL_LEFT)){
-      if (konami == 4 || konami == 6){
-        konami ++;
-      } else if (konami != 5 && konami != 7) {
-        konami = 0;
-      }
-  } else if (master.get_digital(DIGITAL_RIGHT)){
-    if (konami == 5 || konami == 7){
-      konami ++;
-    } else if (konami != 6 && konami != 8) {
-      konami = 0;
-    }
-  } else if (master.get_digital(DIGITAL_B)){
-    if (konami == 8){
-      konami ++;
-    } else if (konami != 9) {
-      konami = 0;
-    }
-  } else if (master.get_digital(DIGITAL_A)){
-    if (konami == 9){
-      konamiAct = true;
-    } else {
-      konami = 0;
-    }
-  }
-
-  if (konamiAct){
-    left(127);
-    right(-127);
-  }
 }
