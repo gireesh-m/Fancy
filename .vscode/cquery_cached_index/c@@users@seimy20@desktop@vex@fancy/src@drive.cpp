@@ -9,6 +9,7 @@ static int maxSpeed = MAX_POWER;
 static int slant = 0;
 static int konami = 0;
 static bool konamiAct = false;
+static int backing = 0;
 
 
 
@@ -291,6 +292,15 @@ void driveOp(){
   setBrakeMode(0);
   int lJoy = master.get_analog(ANALOG_LEFT_Y);
   int rJoy = master.get_analog(ANALOG_RIGHT_Y);
-  left(lJoy);
-  right(rJoy);
+  if(master.get_digital(DIGITAL_X) && !backing){
+    backing = 50;
+  }
+  if(backing){
+    left(-35);
+    right(-35);
+    backing--;
+  }else{
+    left(lJoy);
+    right(rJoy);
+  }
 }

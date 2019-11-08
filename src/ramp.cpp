@@ -13,9 +13,9 @@ void rampOp(){
   static int vel;
 
   if(master.get_digital(DIGITAL_UP)){
-    vel = 127;
+    vel = -70;
   }else if(master.get_digital(DIGITAL_DOWN)){
-    vel = -50;
+    vel = 20;
   }else{
     vel = 0;
 

@@ -2,15 +2,15 @@
 
 Motor intakelift(INTAKELIFT, MOTOR_GEARSET_36, 0, MOTOR_ENCODER_DEGREES);
 
-bool liftDown = false;
-bool liftUp = false;
+
 bool moving = false;
 
 void lift(int vel){
-  if (vel == 0){
-    intakelift.move(-50 * intakelift.get_position());
+  if(vel == 0){
+    intakelift.move(fminf(-1 * intakelift.get_position(), 127));
+  }else{
+    intakelift.move(vel);
   }
-  intakelift.move(vel);
 }
 
 void liftOp(){
@@ -20,10 +20,10 @@ void liftOp(){
     moving = true;
     vel = 110;
   // down
-  } else if(master.get_digital(DIGITAL_R2)){
+  }else if(master.get_digital(DIGITAL_R2)){
     moving = true;
     vel = -80;
-  } else{
+  }else{
     moving = false;
     vel = 0;
   }
