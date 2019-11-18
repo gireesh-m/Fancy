@@ -49,10 +49,10 @@
 #include "ramp.hpp"
 
 //ports
-#define LEFTFRONT 3
-#define LEFTREAR 2
-#define RIGHTFRONT 4
-#define RIGHTREAR 1
+#define LEFTFRONT 17
+#define LEFTREAR 18
+#define RIGHTFRONT 19
+#define RIGHTREAR 20
 #define INTAKELEFT 11
 #define INTAKERIGHT 12
 #define INTAKELIFT 13

@@ -16,7 +16,7 @@ void lift(int vel){
 void liftOp(){
   static int vel;
   // up
-  if(master.get_digital(DIGITAL_L2)){
+  if(master.get_digital(DIGITAL_R1)){
     moving = true;
     vel = 110;
   // down

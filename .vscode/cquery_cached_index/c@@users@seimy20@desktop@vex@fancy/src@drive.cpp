@@ -7,17 +7,16 @@ static int driveTarget = 0;
 static int turnTarget = 0;
 static int maxSpeed = MAX_POWER;
 static int slant = 0;
-static int konami = 0;
-static bool konamiAct = false;
 static int backing = 0;
+static bool tankDrive = false;
 
 
 
 //motors
 Motor left1(LEFTFRONT, MOTOR_GEARSET_18, 0, MOTOR_ENCODER_DEGREES);
-Motor left2(LEFTREAR, MOTOR_GEARSET_18, 0, MOTOR_ENCODER_DEGREES);
+Motor left2(LEFTREAR, MOTOR_GEARSET_18, 1, MOTOR_ENCODER_DEGREES);
 Motor right1(RIGHTFRONT, MOTOR_GEARSET_18, 1, MOTOR_ENCODER_DEGREES);
-Motor right2(RIGHTREAR, MOTOR_GEARSET_18, 1, MOTOR_ENCODER_DEGREES);
+Motor right2(RIGHTREAR, MOTOR_GEARSET_18, 0, MOTOR_ENCODER_DEGREES);
 
 
 // Sensors
@@ -292,7 +291,7 @@ void driveOp(){
   setBrakeMode(0);
   int lJoy = master.get_analog(ANALOG_LEFT_Y);
   int rJoy = master.get_analog(ANALOG_RIGHT_Y);
-  if(master.get_digital(DIGITAL_X) && !backing){
+  if(master.get_digital(DIGITAL_A) && !backing){
     backing = 50;
   }
   if(backing){
@@ -300,7 +299,12 @@ void driveOp(){
     right(-35);
     backing--;
   }else{
-    left(lJoy);
-    right(rJoy);
+    if(tankDrive){
+      left(lJoy);
+      right(rJoy);
+    }else{
+      left(master.get_analog(ANALOG_LEFT_Y) + master.get_analog(ANALOG_RIGHT_X));
+      right(master.get_analog(ANALOG_LEFT_Y) - master.get_analog(ANALOG_RIGHT_X));
+    }
   }
 }
