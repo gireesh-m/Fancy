@@ -9,7 +9,7 @@ void start(){
   delay(1500);
   lowerRamp();
   endtakeAsync();
-  //intakeAsync();
+  intakeAsync();
 }
 
 void farSideBlue(){
@@ -66,27 +66,28 @@ void autonomous() {
   Task intake_task(intakeTask);
   //Task lift_task(liftTask);
   //Task ramp_task(rampTask);
-
-  /*switch(auton){
+/*
+*/
+  switch(auton){
     case 0:
-      farSide();
+      farSideRed();
       break;
     case 1:
-      nearSide();
+      nearSideRed();
       break;
     case 2:
-      farSide();
+      farSideBlue();
       break;
     case 3:
-      nearSide();
+      nearSideBlue();
       break;
     case 4:
-      farSide();
+      farSideRed();
       break;
     case 5:
-      nearSide();
+      nearSideRed();
       break;
-  }*/
+  }
   farSideBlue();
 
   drive_task.remove();
