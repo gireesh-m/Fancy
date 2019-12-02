@@ -66,8 +66,7 @@ void autonomous() {
   Task intake_task(intakeTask);
   //Task lift_task(liftTask);
   //Task ramp_task(rampTask);
-/*
-*/
+
   switch(auton){
     case 0:
       farSideRed();
@@ -95,4 +94,73 @@ void autonomous() {
   intake_task.remove();
   //lift_task.remove();
   //ramp_task.remove();
+}
+
+
+void firstFour(){
+  start();
+  intakeAsync();
+  drive(1.5 TL);
+  delay(1000);
+  drive(0.2 TL);
+  delay(1000);
+  drive(0.2 TL);
+  delay(1000);
+  endtakeAsync();
+}
+
+void bottomFour(){
+  start();
+  turn(180);
+  drive(1.7 TL);
+  turn(90);
+  drive(1 TL);
+  turn(90);
+  intakeAsync();
+  drive(0.5 TL);
+  delay(1000);
+  drive(0.2 TL);
+  delay(1000);
+  drive(0.2 TL);
+  delay(1000);
+  drive(0.2 TL);
+  delay(1000);
+  endtakeAsync();
+}
+
+void dropOff(){
+  start();
+  turn(180);
+  delay(500);
+  drive(1.1 TL);
+  turn(90);
+  delay(500);
+  drive(0.5 TL);
+  raiseRamp();
+}
+
+
+//This is beyond crappy
+void autonomousTheFranklinVersion() {
+  reset(); // reset the drive encoders
+
+  Task drive_task(driveTask);
+  Task turn_task(turnTask);
+  Task intake_task(intakeTask);
+
+  switch(auton){
+    case 0:
+      firstFour();
+      break;
+    case 1:
+      bottomFour();
+      break;
+    case 2:
+      dropOff();
+      break;
+  }
+
+  drive_task.remove();
+  turn_task.remove();
+  intake_task.remove();
 }
