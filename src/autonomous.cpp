@@ -1,5 +1,6 @@
 #include "main.h"
 
+
 //definition of a tile in encoder ticks
 #define TL *469
 
@@ -58,43 +59,43 @@ void farSideRed(){
   drive(-0.2 TL);
 }
 
-void autonomous() {
-  reset(); // reset the drive encoders
-
-  Task drive_task(driveTask);
-  Task turn_task(turnTask);
-  Task intake_task(intakeTask);
-  //Task lift_task(liftTask);
-  //Task ramp_task(rampTask);
-
-  switch(auton){
-    case 0:
-      farSideRed();
-      break;
-    case 1:
-      nearSideRed();
-      break;
-    case 2:
-      farSideBlue();
-      break;
-    case 3:
-      nearSideBlue();
-      break;
-    case 4:
-      farSideRed();
-      break;
-    case 5:
-      nearSideRed();
-      break;
-  }
-  farSideBlue();
-
-  drive_task.remove();
-  turn_task.remove();
-  intake_task.remove();
-  //lift_task.remove();
-  //ramp_task.remove();
-}
+// void autonomous() {
+//   reset(); // reset the drive encoders
+//
+//   Task drive_task(driveTask);
+//   Task turn_task(turnTask);
+//   Task intake_task(intakeTask);
+//   //Task lift_task(liftTask);
+//   //Task ramp_task(rampTask);
+//
+//   switch(auton){
+//     case 0:
+//       farSideRed();
+//       break;
+//     case 1:
+//       nearSideRed();
+//       break;
+//     case 2:
+//       farSideBlue();
+//       break;
+//     case 3:
+//       nearSideBlue();
+//       break;
+//     case 4:
+//       farSideRed();
+//       break;
+//     case 5:
+//       nearSideRed();
+//       break;
+//   }
+//   farSideBlue();
+//
+//   drive_task.remove();
+//   turn_task.remove();
+//   intake_task.remove();
+//   //lift_task.remove();
+//   //ramp_task.remove();
+// }
 
 
 void firstFour(){
@@ -143,26 +144,29 @@ void dropOff(){
 
 
 //This is beyond crappy
-void autonomousTT() {
+void autonomous() {
   reset(); // reset the drive encoders
 
-  Task drive_task(driveTask);
-  Task turn_task(turnTask);
-  Task intake_task(intakeTask);
+  Task driveTask(driveTask);
+  Task turnTask(turnTask);
+  Task intakeTask(intakeTask);
 
   switch(auton){
     case 0:
       firstFour();
       break;
     case 1:
-      bottomFour();
+      travelToBot();
       break;
     case 2:
+      bottomFour();
+      break;
+    case 3:
       dropOff();
       break;
   }
 
-  drive_task.remove();
-  turn_task.remove();
-  intake_task.remove();
+  driveTask.remove();
+  turnTask.remove();
+  intakeTask.remove();
 }
