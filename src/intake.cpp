@@ -51,7 +51,7 @@ void intakeOp(){
     vel = -20;
     backing--;
   }else if(master.get_digital(DIGITAL_R1)){
-    vel = 110;
+    vel = 120;
   // down
   }else if(master.get_digital(DIGITAL_R2)){
     vel = -50;

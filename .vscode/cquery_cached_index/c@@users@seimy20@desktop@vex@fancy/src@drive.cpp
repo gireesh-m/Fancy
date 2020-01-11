@@ -297,8 +297,11 @@ void driveOp(){
   }
   if(master.get_digital_new_press(DIGITAL_RIGHT)){
     tankDrive = !tankDrive;
-    delay(75);
-    master.clear();
+    if(tankDrive){
+      master.set_text(1, 0, "TANK DRIVE  ");
+    }else{
+      master.set_text(1, 0, "ARCADE DRIVE");
+    }
   }
   if(backing){
     left(-35);
@@ -309,7 +312,6 @@ void driveOp(){
       if(driver == 'k'){
         left(lJoy);
         right(rJoy);
-        master.set_text(0, 0, "TANK DRIVE");
       }else{
         left(master.get_analog(ANALOG_RIGHT_Y) + master.get_analog(ANALOG_LEFT_X));
         right(master.get_analog(ANALOG_RIGHT_Y) - master.get_analog(ANALOG_LEFT_X));
@@ -317,7 +319,6 @@ void driveOp(){
     }else{
       left(master.get_analog(ANALOG_RIGHT_Y) + master.get_analog(ANALOG_RIGHT_X));
       right(master.get_analog(ANALOG_RIGHT_Y) - master.get_analog(ANALOG_RIGHT_X));
-      master.set_text(2, 0, "ARCADE DRIVE");
     }
   }
 }

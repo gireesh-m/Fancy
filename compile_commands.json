@@ -5,12 +5,24 @@
             "-c",
             "-target",
             "armv7ar-none-none-eabi",
+<<<<<<< HEAD
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include/c++/9.2.1",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include/c++/9.2.1/arm-none-eabi",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include/c++/9.2.1/backward",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/include",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/include-fixed",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include",
+=======
+            "-fno-ms-extensions",
+            "-fno-ms-compatibility",
+            "-fno-delayed-template-parsing",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include/c++/7.2.1",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include/c++/7.2.1/arm-none-eabi/thumb/v7-ar/fpv3/softfp",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include/c++/7.2.1/backward",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/include",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/include-fixed",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include",
+>>>>>>> d2079bcf6a2cbe092389065db900db3f27df6fe2
             "-iquote./include",
             "-iquote./include/./",
             "-mcpu=cortex-a9",
@@ -26,11 +38,19 @@
             "-funwind-tables",
             "--std=gnu++17",
             "-o",
+<<<<<<< HEAD
             "bin/drive.cpp.o",
             "src/drive.cpp"
         ],
         "directory": "/Users/wmac/Fancy",
         "file": "src/drive.cpp"
+=======
+            "C:/Users/SeimY20/AppData/Local/Temp/tmprt8a138_/opcontrol.cpp.o",
+            "src\\opcontrol.cpp"
+        ],
+        "directory": "C:\\Users\\SeimY20\\Desktop\\VEX\\Fancy",
+        "file": "src\\opcontrol.cpp"
+>>>>>>> d2079bcf6a2cbe092389065db900db3f27df6fe2
     },
     {
         "arguments": [
@@ -38,12 +58,24 @@
             "-c",
             "-target",
             "armv7ar-none-none-eabi",
+<<<<<<< HEAD
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include/c++/9.2.1",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include/c++/9.2.1/arm-none-eabi",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include/c++/9.2.1/backward",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/include",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/include-fixed",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include",
+=======
+            "-fno-ms-extensions",
+            "-fno-ms-compatibility",
+            "-fno-delayed-template-parsing",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include/c++/7.2.1",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include/c++/7.2.1/arm-none-eabi/thumb/v7-ar/fpv3/softfp",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include/c++/7.2.1/backward",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/include",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/include-fixed",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include",
+>>>>>>> d2079bcf6a2cbe092389065db900db3f27df6fe2
             "-iquote./include",
             "-iquote./include/./",
             "-mcpu=cortex-a9",
@@ -59,11 +91,19 @@
             "-funwind-tables",
             "--std=gnu++17",
             "-o",
+<<<<<<< HEAD
             "bin/gui.cpp.o",
             "src/gui.cpp"
         ],
         "directory": "/Users/wmac/Fancy",
         "file": "src/gui.cpp"
+=======
+            "C:/Users/SeimY20/AppData/Local/Temp/tmprt8a138_/gui.cpp.o",
+            "src\\gui.cpp"
+        ],
+        "directory": "C:\\Users\\SeimY20\\Desktop\\VEX\\Fancy",
+        "file": "src\\gui.cpp"
+>>>>>>> d2079bcf6a2cbe092389065db900db3f27df6fe2
     },
     {
         "arguments": [
@@ -71,12 +111,24 @@
             "-c",
             "-target",
             "armv7ar-none-none-eabi",
+<<<<<<< HEAD
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include/c++/9.2.1",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include/c++/9.2.1/arm-none-eabi",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include/c++/9.2.1/backward",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/include",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/include-fixed",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include",
+=======
+            "-fno-ms-extensions",
+            "-fno-ms-compatibility",
+            "-fno-delayed-template-parsing",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include/c++/7.2.1",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include/c++/7.2.1/arm-none-eabi/thumb/v7-ar/fpv3/softfp",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include/c++/7.2.1/backward",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/include",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/include-fixed",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include",
+>>>>>>> d2079bcf6a2cbe092389065db900db3f27df6fe2
             "-iquote./include",
             "-iquote./include/./",
             "-mcpu=cortex-a9",
@@ -92,11 +144,19 @@
             "-funwind-tables",
             "--std=gnu++17",
             "-o",
+<<<<<<< HEAD
             "bin/autonomous.cpp.o",
             "src/autonomous.cpp"
         ],
         "directory": "/Users/wmac/Fancy",
         "file": "src/autonomous.cpp"
+=======
+            "C:/Users/SeimY20/AppData/Local/Temp/tmprt8a138_/autonomous.cpp.o",
+            "src\\autonomous.cpp"
+        ],
+        "directory": "C:\\Users\\SeimY20\\Desktop\\VEX\\Fancy",
+        "file": "src\\autonomous.cpp"
+>>>>>>> d2079bcf6a2cbe092389065db900db3f27df6fe2
     },
     {
         "arguments": [
@@ -104,12 +164,24 @@
             "-c",
             "-target",
             "armv7ar-none-none-eabi",
+<<<<<<< HEAD
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include/c++/9.2.1",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include/c++/9.2.1/arm-none-eabi",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include/c++/9.2.1/backward",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/include",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/include-fixed",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include",
+=======
+            "-fno-ms-extensions",
+            "-fno-ms-compatibility",
+            "-fno-delayed-template-parsing",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include/c++/7.2.1",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include/c++/7.2.1/arm-none-eabi/thumb/v7-ar/fpv3/softfp",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include/c++/7.2.1/backward",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/include",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/include-fixed",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include",
+>>>>>>> d2079bcf6a2cbe092389065db900db3f27df6fe2
             "-iquote./include",
             "-iquote./include/./",
             "-mcpu=cortex-a9",
@@ -125,11 +197,19 @@
             "-funwind-tables",
             "--std=gnu++17",
             "-o",
+<<<<<<< HEAD
             "bin/ramp.cpp.o",
             "src/ramp.cpp"
         ],
         "directory": "/Users/wmac/Fancy",
         "file": "src/ramp.cpp"
+=======
+            "C:/Users/SeimY20/AppData/Local/Temp/tmprt8a138_/initialize.cpp.o",
+            "src\\initialize.cpp"
+        ],
+        "directory": "C:\\Users\\SeimY20\\Desktop\\VEX\\Fancy",
+        "file": "src\\initialize.cpp"
+>>>>>>> d2079bcf6a2cbe092389065db900db3f27df6fe2
     },
     {
         "arguments": [
@@ -137,12 +217,24 @@
             "-c",
             "-target",
             "armv7ar-none-none-eabi",
+<<<<<<< HEAD
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include/c++/9.2.1",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include/c++/9.2.1/arm-none-eabi",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include/c++/9.2.1/backward",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/include",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/include-fixed",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include",
+=======
+            "-fno-ms-extensions",
+            "-fno-ms-compatibility",
+            "-fno-delayed-template-parsing",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include/c++/7.2.1",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include/c++/7.2.1/arm-none-eabi/thumb/v7-ar/fpv3/softfp",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include/c++/7.2.1/backward",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/include",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/include-fixed",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include",
+>>>>>>> d2079bcf6a2cbe092389065db900db3f27df6fe2
             "-iquote./include",
             "-iquote./include/./",
             "-mcpu=cortex-a9",
@@ -158,11 +250,19 @@
             "-funwind-tables",
             "--std=gnu++17",
             "-o",
+<<<<<<< HEAD
             "bin/intake.cpp.o",
             "src/intake.cpp"
         ],
         "directory": "/Users/wmac/Fancy",
         "file": "src/intake.cpp"
+=======
+            "C:/Users/SeimY20/AppData/Local/Temp/tmprt8a138_/intake.cpp.o",
+            "src\\intake.cpp"
+        ],
+        "directory": "C:\\Users\\SeimY20\\Desktop\\VEX\\Fancy",
+        "file": "src\\intake.cpp"
+>>>>>>> d2079bcf6a2cbe092389065db900db3f27df6fe2
     },
     {
         "arguments": [
@@ -170,12 +270,24 @@
             "-c",
             "-target",
             "armv7ar-none-none-eabi",
+<<<<<<< HEAD
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include/c++/9.2.1",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include/c++/9.2.1/arm-none-eabi",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include/c++/9.2.1/backward",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/include",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/include-fixed",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include",
+=======
+            "-fno-ms-extensions",
+            "-fno-ms-compatibility",
+            "-fno-delayed-template-parsing",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include/c++/7.2.1",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include/c++/7.2.1/arm-none-eabi/thumb/v7-ar/fpv3/softfp",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include/c++/7.2.1/backward",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/include",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/include-fixed",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include",
+>>>>>>> d2079bcf6a2cbe092389065db900db3f27df6fe2
             "-iquote./include",
             "-iquote./include/./",
             "-mcpu=cortex-a9",
@@ -191,11 +303,16 @@
             "-funwind-tables",
             "--std=gnu++17",
             "-o",
-            "bin/opcontrol.cpp.o",
-            "src/opcontrol.cpp"
+            "C:/Users/SeimY20/AppData/Local/Temp/tmprt8a138_/AMPC.cpp.o",
+            "src\\AMPC.cpp"
         ],
+<<<<<<< HEAD
         "directory": "/Users/wmac/Fancy",
         "file": "src/opcontrol.cpp"
+=======
+        "directory": "C:\\Users\\SeimY20\\Desktop\\VEX\\Fancy",
+        "file": "src\\AMPC.cpp"
+>>>>>>> d2079bcf6a2cbe092389065db900db3f27df6fe2
     },
     {
         "arguments": [
@@ -203,12 +320,24 @@
             "-c",
             "-target",
             "armv7ar-none-none-eabi",
+<<<<<<< HEAD
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include/c++/9.2.1",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include/c++/9.2.1/arm-none-eabi",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include/c++/9.2.1/backward",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/include",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/include-fixed",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include",
+=======
+            "-fno-ms-extensions",
+            "-fno-ms-compatibility",
+            "-fno-delayed-template-parsing",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include/c++/7.2.1",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include/c++/7.2.1/arm-none-eabi/thumb/v7-ar/fpv3/softfp",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include/c++/7.2.1/backward",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/include",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/include-fixed",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include",
+>>>>>>> d2079bcf6a2cbe092389065db900db3f27df6fe2
             "-iquote./include",
             "-iquote./include/./",
             "-mcpu=cortex-a9",
@@ -224,11 +353,19 @@
             "-funwind-tables",
             "--std=gnu++17",
             "-o",
+<<<<<<< HEAD
             "bin/AMPC.cpp.o",
             "src/AMPC.cpp"
         ],
         "directory": "/Users/wmac/Fancy",
         "file": "src/AMPC.cpp"
+=======
+            "C:/Users/SeimY20/AppData/Local/Temp/tmprt8a138_/ramp.cpp.o",
+            "src\\ramp.cpp"
+        ],
+        "directory": "C:\\Users\\SeimY20\\Desktop\\VEX\\Fancy",
+        "file": "src\\ramp.cpp"
+>>>>>>> d2079bcf6a2cbe092389065db900db3f27df6fe2
     },
     {
         "arguments": [
@@ -236,12 +373,24 @@
             "-c",
             "-target",
             "armv7ar-none-none-eabi",
+<<<<<<< HEAD
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include/c++/9.2.1",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include/c++/9.2.1/arm-none-eabi",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include/c++/9.2.1/backward",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/include",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/include-fixed",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include",
+=======
+            "-fno-ms-extensions",
+            "-fno-ms-compatibility",
+            "-fno-delayed-template-parsing",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include/c++/7.2.1",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include/c++/7.2.1/arm-none-eabi/thumb/v7-ar/fpv3/softfp",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include/c++/7.2.1/backward",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/include",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/include-fixed",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include",
+>>>>>>> d2079bcf6a2cbe092389065db900db3f27df6fe2
             "-iquote./include",
             "-iquote./include/./",
             "-mcpu=cortex-a9",
@@ -257,11 +406,19 @@
             "-funwind-tables",
             "--std=gnu++17",
             "-o",
+<<<<<<< HEAD
             "bin/main.cpp.o",
             "src/main.cpp"
         ],
         "directory": "/Users/wmac/Fancy",
         "file": "src/main.cpp"
+=======
+            "C:/Users/SeimY20/AppData/Local/Temp/tmprt8a138_/intakelift.cpp.o",
+            "src\\intakelift.cpp"
+        ],
+        "directory": "C:\\Users\\SeimY20\\Desktop\\VEX\\Fancy",
+        "file": "src\\intakelift.cpp"
+>>>>>>> d2079bcf6a2cbe092389065db900db3f27df6fe2
     },
     {
         "arguments": [
@@ -269,12 +426,24 @@
             "-c",
             "-target",
             "armv7ar-none-none-eabi",
+<<<<<<< HEAD
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include/c++/9.2.1",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include/c++/9.2.1/arm-none-eabi",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include/c++/9.2.1/backward",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/include",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/include-fixed",
             "-isystem/usr/local/Cellar/arm-gcc-bin/9-2019-q4-major/bin/../lib/gcc/arm-none-eabi/9.2.1/../../../../arm-none-eabi/include",
+=======
+            "-fno-ms-extensions",
+            "-fno-ms-compatibility",
+            "-fno-delayed-template-parsing",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include/c++/7.2.1",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include/c++/7.2.1/arm-none-eabi/thumb/v7-ar/fpv3/softfp",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include/c++/7.2.1/backward",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/include",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/include-fixed",
+            "-isystemc:\\users\\seimy20\\appdata\\local\\programs\\pros\\toolchain\\usr\\bin\\../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/include",
+>>>>>>> d2079bcf6a2cbe092389065db900db3f27df6fe2
             "-iquote./include",
             "-iquote./include/./",
             "-mcpu=cortex-a9",
@@ -323,10 +492,18 @@
             "-funwind-tables",
             "--std=gnu++17",
             "-o",
+<<<<<<< HEAD
             "bin/intakelift.cpp.o",
             "src/intakelift.cpp"
         ],
         "directory": "/Users/wmac/Fancy",
         "file": "src/intakelift.cpp"
+=======
+            "C:/Users/SeimY20/AppData/Local/Temp/tmprt8a138_/drive.cpp.o",
+            "src\\drive.cpp"
+        ],
+        "directory": "C:\\Users\\SeimY20\\Desktop\\VEX\\Fancy",
+        "file": "src\\drive.cpp"
+>>>>>>> d2079bcf6a2cbe092389065db900db3f27df6fe2
     }
 ]
