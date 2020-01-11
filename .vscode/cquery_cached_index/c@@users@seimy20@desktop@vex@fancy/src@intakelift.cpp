@@ -43,23 +43,26 @@ void lift(int vel){
 
 void liftOp(){
   static int vel;
-  // down
-  if(master.get_digital(DIGITAL_L2)){
-    moving = true;
-    dir = 1;
-    vel = 60;
-  // up
-  }else if(master.get_digital(DIGITAL_L1)){
-    moving = true;
-    dir = -1;
-    vel = -120;
-  }else{
-    moving = false;
-    vel = 0;
-  }
-  if(moving == true){
-    stopPosition = intakelift.get_position();
-  }
+  intakelift.set_current_limit(2500);
+  if (!intakelift.is_over_temp()) {
+    // down
+    if(master.get_digital(DIGITAL_L2)){
+      moving = true;
+      dir = 1;
+      vel = 60;
+    // up
+    }else if(master.get_digital(DIGITAL_L1)){
+      moving = true;
+      dir = -1;
+      vel = -120;
+    }else{
+      moving = false;
+      vel = 0;
+    }
+    if(moving == true){
+      stopPosition = intakelift.get_position();
+    }
 
-  lift(vel);
+    lift(vel);
+  }
 }
