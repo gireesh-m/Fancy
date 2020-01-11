@@ -1,6 +1,6 @@
 #include "main.h"
 
-Motor rampMotor(RAMP, MOTOR_GEARSET_18, 0, MOTOR_ENCODER_DEGREES);
+Motor rampMotor(RAMP, MOTOR_GEARSET_36, 0, MOTOR_ENCODER_DEGREES);
 static int moving = 0;
 static int dir = 0;
 bool tank_drive = true;
