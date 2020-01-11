@@ -2,10 +2,31 @@
 
 Motor intakelift(INTAKELIFT, MOTOR_GEARSET_18, 0, MOTOR_ENCODER_DEGREES);
 
-
 bool moving = false;
 int stopPosition = 0;
 int dir = 0;
+int lifting = 0;
+
+void liftAsync(int dir) {
+  lifting = dir;
+}
+
+void intakeTask(void* parameter){
+  while(1) {
+    switch(lifting){
+      case -1:
+        lift(60);
+        break;
+      case 0:
+        lift(0);
+        break;
+      case 1:
+        lift(-120);
+        break;
+    }
+    delay(20);
+  }
+}
 
 void lift(int vel){
   if(vel == 0){

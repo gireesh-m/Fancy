@@ -100,48 +100,50 @@ void autonomous() {
 void firstFour(){
   start();
   intakeAsync();
-  drive(1.5 TL);
+  drive(0.79 TL);
   delay(1000);
-  drive(0.2 TL);
+  drive(0.23 TL);
   delay(1000);
-  drive(0.2 TL);
+  drive(0.23 TL);
   delay(1000);
   endtakeAsync();
 }
 
-void bottomFour(){
+void travelToBot(){
   start();
-  turn(180);
-  drive(1.7 TL);
-  turn(90);
+  drive(-1.2 TL);
+  turn(-90);
   drive(1 TL);
   turn(90);
+}
+
+void bottomFour(){
+  start();
   intakeAsync();
-  drive(0.5 TL);
+  drive(0.51 TL);
   delay(1000);
-  drive(0.2 TL);
+  drive(0.23 TL);
   delay(1000);
-  drive(0.2 TL);
+  drive(0.23 TL);
   delay(1000);
-  drive(0.2 TL);
+  drive(0.23 TL);
   delay(1000);
   endtakeAsync();
 }
 
 void dropOff(){
   start();
-  turn(180);
+  drive(-1.25 TL);
+  turn(-90);
   delay(500);
-  drive(1.1 TL);
-  turn(90);
+  drive(0.46 TL);
   delay(500);
-  drive(0.5 TL);
   raiseRamp();
 }
 
 
 //This is beyond crappy
-void autonomousTheFranklinVersion() {
+void autonomousTT() {
   reset(); // reset the drive encoders
 
   Task drive_task(driveTask);
