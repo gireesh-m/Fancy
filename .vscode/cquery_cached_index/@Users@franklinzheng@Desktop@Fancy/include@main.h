@@ -49,15 +49,14 @@
 #include "ramp.hpp"
 
 //ports
-#define LEFTFRONT 17
-#define LEFTREAR 18
-#define RIGHTFRONT 19
-#define RIGHTREAR 20
-#define INTAKELEFT 11
-#define INTAKERIGHT 12
-#define INTAKELIFT 13
-#define RAMP 14
-#define POTENTIOMETER_PORT 'A'
+#define LEFTFRONT 10
+#define LEFTREAR 9
+#define RIGHTFRONT 20
+#define RIGHTREAR 19
+#define INTAKELEFT 7
+#define INTAKERIGHT 17
+#define INTAKELIFT 8
+#define RAMP 18
 
 
 /**
