@@ -9,11 +9,15 @@ static int maxSpeed = MAX_POWER;
 static int slant = 0;
 int backing = 0;
 bool tankDrive = true;
-char driver = 'k';
+char driver = 'a';
 
 
 
 //motors
+/*Motor left1(LEFTFRONT, MOTOR_GEARSET_18, 1, MOTOR_ENCODER_DEGREES);
+Motor left2(LEFTREAR, MOTOR_GEARSET_18, 0, MOTOR_ENCODER_DEGREES);
+Motor right1(RIGHTFRONT, MOTOR_GEARSET_18, 1, MOTOR_ENCODER_DEGREES);
+Motor right2(RIGHTREAR, MOTOR_GEARSET_18, 0, MOTOR_ENCODER_DEGREES);*/
 Motor left1(LEFTFRONT, MOTOR_GEARSET_18, 1, MOTOR_ENCODER_DEGREES);
 Motor left2(LEFTREAR, MOTOR_GEARSET_18, 0, MOTOR_ENCODER_DEGREES);
 Motor right1(RIGHTFRONT, MOTOR_GEARSET_18, 1, MOTOR_ENCODER_DEGREES);
@@ -313,12 +317,17 @@ void driveOp(){
         left(lJoy);
         right(rJoy);
       }else{
-        left(master.get_analog(ANALOG_RIGHT_Y) + master.get_analog(ANALOG_LEFT_X));
-        right(-(master.get_analog(ANALOG_RIGHT_Y) - master.get_analog(ANALOG_LEFT_X)));
+        left(-master.get_analog(ANALOG_RIGHT_Y) + master.get_analog(ANALOG_LEFT_X));
+        right(master.get_analog(ANALOG_RIGHT_Y) + master.get_analog(ANALOG_LEFT_X));
       }
     }else{
-      left(master.get_analog(ANALOG_RIGHT_Y) + master.get_analog(ANALOG_RIGHT_X));
-      right(master.get_analog(ANALOG_RIGHT_Y) - master.get_analog(ANALOG_RIGHT_X));
+      if(driver == 'k'){
+        left(master.get_analog(ANALOG_RIGHT_Y) + master.get_analog(ANALOG_RIGHT_X));
+        right(master.get_analog(ANALOG_RIGHT_Y) - master.get_analog(ANALOG_RIGHT_X));
+      }else{
+        left(-(master.get_analog(ANALOG_RIGHT_Y) + master.get_analog(ANALOG_RIGHT_X)));
+        right(master.get_analog(ANALOG_RIGHT_Y) - master.get_analog(ANALOG_RIGHT_X));
+      }
     }
   }
 }

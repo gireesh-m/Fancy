@@ -15,7 +15,7 @@ void liftTask(void* parameter){
   while(1) {
     switch(lifting){
       case -1:
-        lift(60);
+        lift(120);
         break;
       case 0:
         lift(0);

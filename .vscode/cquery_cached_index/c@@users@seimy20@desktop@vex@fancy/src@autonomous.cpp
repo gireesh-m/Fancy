@@ -141,7 +141,7 @@ void dropOff(){
 
 //This is beyond crappy
 void autonomous() {
-  reset(); // reset the drive encoders
+  /*reset(); // reset the drive encoders
 
   Task drive_task(driveTask);
   Task turn_task(turnTask);
@@ -166,5 +166,5 @@ void autonomous() {
   drive_task.remove();
   turn_task.remove();
   intake_task.remove();
-  lift_task.remove();
+  lift_task.remove();*/
 }
