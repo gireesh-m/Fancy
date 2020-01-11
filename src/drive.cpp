@@ -314,7 +314,7 @@ void driveOp(){
         right(rJoy);
       }else{
         left(master.get_analog(ANALOG_RIGHT_Y) + master.get_analog(ANALOG_LEFT_X));
-        right(master.get_analog(ANALOG_RIGHT_Y) - master.get_analog(ANALOG_LEFT_X));
+        right(-(master.get_analog(ANALOG_RIGHT_Y) - master.get_analog(ANALOG_LEFT_X)));
       }
     }else{
       left(master.get_analog(ANALOG_RIGHT_Y) + master.get_analog(ANALOG_RIGHT_X));

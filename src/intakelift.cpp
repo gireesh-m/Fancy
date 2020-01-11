@@ -11,7 +11,7 @@ void liftAsync(int dir) {
   lifting = dir;
 }
 
-void intakeTask(void* parameter){
+void liftTask(void* parameter){
   while(1) {
     switch(lifting){
       case -1:
