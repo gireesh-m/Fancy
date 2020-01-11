@@ -9,6 +9,7 @@ static int maxSpeed = MAX_POWER;
 static int slant = 0;
 int backing = 0;
 bool tankDrive = true;
+char driver = 'k';
 
 
 
@@ -296,6 +297,7 @@ void driveOp(){
   }
   if(master.get_digital_new_press(DIGITAL_RIGHT)){
     tankDrive = !tankDrive;
+    delay(75);
     master.clear();
   }
   if(backing){
@@ -304,12 +306,17 @@ void driveOp(){
     backing--;
   }else{
     if(tankDrive){
-      left(lJoy);
-      right(rJoy);
-      master.set_text(0, 0, "TANK DRIVE");
+      if(driver == 'k'){
+        left(lJoy);
+        right(rJoy);
+        master.set_text(0, 0, "TANK DRIVE");
+      }else{
+        left(master.get_analog(ANALOG_RIGHT_Y) + master.get_analog(ANALOG_LEFT_X));
+        right(master.get_analog(ANALOG_RIGHT_Y) - master.get_analog(ANALOG_LEFT_X));
+      }
     }else{
-      left(master.get_analog(ANALOG_RIGHT_X) + master.get_analog(ANALOG_RIGHT_Y));
-      right(-master.get_analog(ANALOG_RIGHT_X) + master.get_analog(ANALOG_RIGHT_Y));
+      left(master.get_analog(ANALOG_RIGHT_Y) + master.get_analog(ANALOG_RIGHT_X));
+      right(master.get_analog(ANALOG_RIGHT_Y) - master.get_analog(ANALOG_RIGHT_X));
       master.set_text(2, 0, "ARCADE DRIVE");
     }
   }

@@ -65,11 +65,11 @@ void rampOp(){
     }
 
     if(master.get_digital(DIGITAL_UP) && !moving){
-      moving = 130;
+      moving = 115;
       dir = -1;
       //ramp(-rampMotor.get_position() - 50);
     }else if(master.get_digital(DIGITAL_DOWN) && !moving){
-      moving = 130;
+      moving = 115;
       dir = 1;
       //ramp(50 + rampMotor.get_position());
     }
