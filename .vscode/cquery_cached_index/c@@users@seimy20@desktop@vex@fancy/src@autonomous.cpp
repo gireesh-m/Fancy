@@ -1,7 +1,7 @@
 #include "main.h"
 
 //definition of a tile in encoder ticks
-#define TL *635
+#define TL *469
 
 void start(){
   raiseRamp();
