@@ -7,14 +7,14 @@ static int driveTarget = 0;
 static int turnTarget = 0;
 static int maxSpeed = MAX_POWER;
 static int slant = 0;
-static int backing = 0;
-static bool tankDrive = false;
+int backing = 0;
+bool tankDrive = true;
 
 
 
 //motors
-Motor left1(LEFTFRONT, MOTOR_GEARSET_18, 0, MOTOR_ENCODER_DEGREES);
-Motor left2(LEFTREAR, MOTOR_GEARSET_18, 1, MOTOR_ENCODER_DEGREES);
+Motor left1(LEFTFRONT, MOTOR_GEARSET_18, 1, MOTOR_ENCODER_DEGREES);
+Motor left2(LEFTREAR, MOTOR_GEARSET_18, 0, MOTOR_ENCODER_DEGREES);
 Motor right1(RIGHTFRONT, MOTOR_GEARSET_18, 1, MOTOR_ENCODER_DEGREES);
 Motor right2(RIGHTREAR, MOTOR_GEARSET_18, 0, MOTOR_ENCODER_DEGREES);
 
@@ -291,8 +291,12 @@ void driveOp(){
   setBrakeMode(0);
   int lJoy = master.get_analog(ANALOG_LEFT_Y);
   int rJoy = master.get_analog(ANALOG_RIGHT_Y);
-  if(master.get_digital(DIGITAL_A) && !backing){
+  if(master.get_digital_new_press(DIGITAL_A) && !backing){
     backing = 50;
+  }
+  if(master.get_digital_new_press(DIGITAL_RIGHT)){
+    tankDrive = !tankDrive;
+    master.clear();
   }
   if(backing){
     left(-35);
@@ -302,9 +306,11 @@ void driveOp(){
     if(tankDrive){
       left(lJoy);
       right(rJoy);
+      master.set_text(0, 0, "TANK DRIVE");
     }else{
-      left(master.get_analog(ANALOG_LEFT_Y) + master.get_analog(ANALOG_RIGHT_X));
-      right(master.get_analog(ANALOG_LEFT_Y) - master.get_analog(ANALOG_RIGHT_X));
+      left(master.get_analog(ANALOG_RIGHT_X) + master.get_analog(ANALOG_RIGHT_Y));
+      right(-master.get_analog(ANALOG_RIGHT_X) + master.get_analog(ANALOG_RIGHT_Y));
+      master.set_text(2, 0, "ARCADE DRIVE");
     }
   }
 }

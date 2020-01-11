@@ -276,7 +276,4 @@ void gui(void) {
   label = lv_label_create(btn1, NULL);
   lv_label_set_text(label, "Back");
 
-
-
-
 }
