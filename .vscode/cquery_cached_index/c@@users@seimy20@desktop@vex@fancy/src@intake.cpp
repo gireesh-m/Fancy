@@ -42,21 +42,25 @@ void intakeTask(void* parameter){
 
 void intakeOp(){
   static int vel;
-  // up
-  if(master.get_digital(DIGITAL_A) && !backing){
-    backing = 100;
-  }
+  intakeLeft.set_current_limit(2500);
+  intakeRight.set_current_limit(2500);
+  if (!intakeLeft.is_over_temp() && !intakeRight.is_over_temp()) {
+    if(master.get_digital(DIGITAL_A) && !backing){
+      backing = 100;
+    }
 
-  if(backing){
-    vel = -20;
-    backing--;
-  }else if(master.get_digital(DIGITAL_R1)){
-    vel = 120;
-  // down
-  }else if(master.get_digital(DIGITAL_R2)){
-    vel = -50;
-  }else{
-    vel = 0;
+    if(backing){
+      vel = -20;
+      backing--;
+    }else if(master.get_digital(DIGITAL_R1)){
+      vel = 127;
+    }else if(master.get_digital(DIGITAL_R2)){
+      vel = -50;
+    }else if(master.get_digital(DIGITAL_LEFT)){
+      vel = -120;
+    }else{
+      vel = 0;
+    }
+    intake(vel);
   }
-  intake(vel);
 }

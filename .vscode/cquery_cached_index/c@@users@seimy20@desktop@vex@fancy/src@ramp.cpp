@@ -7,7 +7,7 @@ bool tank_drive = true;
 bool pressed = false;
 
 bool isUp(){
-  if(rampMotor.get_position() <= -10){
+  if(rampMotor.get_position() <= -380){
     return(true);
   }
   return(false);
@@ -45,7 +45,6 @@ void ramp(int vel){
 
 void rampOp(){
   static int vel;
-
   rampMotor.set_current_limit(2500);
   if (!rampMotor.is_over_temp()) {
     if(master.get_digital(DIGITAL_RIGHT) && !pressed){
@@ -55,28 +54,15 @@ void rampOp(){
     if(!master.get_digital(DIGITAL_RIGHT) && pressed){
       pressed = false;
     }
-
     if(tank_drive){
-      if(moving){
-        if(dir == -1){
-          ramp(1.1*(moving * dir) - 10);
-        }else{
-          ramp(30);
-        }
-        moving--;
+      if(master.get_digital(DIGITAL_UP)){
+        ramp(-100);
+      }else if(master.get_digital(DIGITAL_DOWN)){
+        ramp(50);
+      }else{
+        ramp(0);
       }
-
-      if(master.get_digital(DIGITAL_UP) && !moving){
-        moving = 115;
-        dir = -1;
-        //ramp(-rampMotor.get_position() - 50);
-      }else if(master.get_digital(DIGITAL_DOWN) && !moving){
-        moving = 115;
-        dir = 1;
-        //ramp(50 + rampMotor.get_position());
-      }
-    }
-    else{
+    }else{
       ramp(-master.get_analog(ANALOG_LEFT_Y));
     }
   }

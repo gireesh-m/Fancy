@@ -1,15 +1,14 @@
 #include "main.h"
 
 //definition of a tile in encoder ticks
-#define TL *469
+#define TL *281
 
 void start(){
-  raiseRamp();
-  outtakeAsync();
+  liftAsync(1);
+  delay(2000);
+  liftAsync(-1);
   delay(1500);
-  lowerRamp();
-  endtakeAsync();
-  intakeAsync();
+  liftAsync(0);
 }
 
 void farSideBlue(){
@@ -57,41 +56,6 @@ void farSideRed(){
   raiseRamp();
   drive(-0.2 TL);
 }
-
-//void autonomous() {
-//   reset(); // reset the drive encoders
-//
-//   Task drive_task(driveTask);
-//   Task turn_task(turnTask);
-//   Task intake_task(intakeTask);
-//   //Task lift_task(liftTask);
-//   //Task ramp_task(rampTask);
-//
-//   switch(auton){
-//     case 0:
-//       farSideRed();
-//       break;
-//     case 1:
-//       nearSideRed();
-//       break;
-//     case 2:
-//       farSideBlue();
-//       break;
-//     case 3:
-//       nearSideBlue();
-//       break;
-//     case 4:
-//       farSideRed();
-//       break;
-//     case 5:
-//       nearSideRed();
-//       break;
-//   }
-  //farSideBlue();
-
-  //lift_task.remove();
-  //ramp_task.remove();
-//}
 
 
 void firstFour(){
@@ -141,30 +105,31 @@ void dropOff(){
 
 //This is beyond crappy
 void autonomous() {
-  /*reset(); // reset the drive encoders
+  reset(); // reset the drive encoders
 
-  Task drive_task(driveTask);
+  /*Task drive_task(driveTask);
   Task turn_task(turnTask);
-  Task intake_task(intakeTask);
+  Task intake_task(intakeTask);*/
   Task lift_task(liftTask);
 
-  switch(auton){
-    case 0:
-      firstFour();
-      break;
-    case 1:
-      travelToBot();
-      break;
-    case 2:
-      bottomFour();
-      break;
-    case 3:
-      dropOff();
-      break;
-  }
+  // switch(auton){
+  //   case 0:
+  //     firstFour();
+  //     break;
+  //   case 1:
+  //     travelToBot();
+  //     break;
+  //   case 2:
+  //     bottomFour();
+  //     break;
+  //   case 3:
+  //     dropOff();
+  //     break;
+  // }
+  start();
 
-  drive_task.remove();
+  /*drive_task.remove();
   turn_task.remove();
-  intake_task.remove();
-  lift_task.remove();*/
+  intake_task.remove();*/
+  lift_task.remove();
 }

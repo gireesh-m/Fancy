@@ -4,6 +4,7 @@
 void liftAsync(int dir);
 void liftTask(void* parameter);
 void lift(int vel);
+double liftHeight();
 void liftOp();
 
 

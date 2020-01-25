@@ -9,17 +9,12 @@ static int maxSpeed = MAX_POWER;
 static int slant = 0;
 int backing = 0;
 bool tankDrive = true;
-char driver = 'a';
 
 
 
 //motors
-/*Motor left1(LEFTFRONT, MOTOR_GEARSET_18, 1, MOTOR_ENCODER_DEGREES);
-Motor left2(LEFTREAR, MOTOR_GEARSET_18, 0, MOTOR_ENCODER_DEGREES);
-Motor right1(RIGHTFRONT, MOTOR_GEARSET_18, 1, MOTOR_ENCODER_DEGREES);
-Motor right2(RIGHTREAR, MOTOR_GEARSET_18, 0, MOTOR_ENCODER_DEGREES);*/
 Motor left1(LEFTFRONT, MOTOR_GEARSET_18, 1, MOTOR_ENCODER_DEGREES);
-Motor left2(LEFTREAR, MOTOR_GEARSET_18, 0, MOTOR_ENCODER_DEGREES);
+Motor left2(LEFTREAR, MOTOR_GEARSET_18, 1, MOTOR_ENCODER_DEGREES);
 Motor right1(RIGHTFRONT, MOTOR_GEARSET_18, 1, MOTOR_ENCODER_DEGREES);
 Motor right2(RIGHTREAR, MOTOR_GEARSET_18, 0, MOTOR_ENCODER_DEGREES);
 
@@ -34,8 +29,8 @@ void left(int vel){
 }
 
 void right(int vel){
-  right1.move(vel);
-  right2.move(vel);
+  right1.move(0.88*vel);
+  right2.move(0.88*vel);
 }
 
 void reset(){
@@ -102,12 +97,12 @@ void rightSlew(int rightTarget){
 /**************************************************/
 //slop correction
 //probably get rid of this cause its bad
-/*void slop(int sp){
-  if(sp < 0){
-    right(-40);
-    delay(100);
-  }
-}*/
+// void slop(int sp){
+//   if(sp < 0){
+//     left(-40);
+//     delay(100);
+//   }
+// }
 
 /**************************************************/
 //feedback
@@ -313,21 +308,11 @@ void driveOp(){
     backing--;
   }else{
     if(tankDrive){
-      if(driver == 'k'){
-        left(lJoy);
-        right(rJoy);
-      }else{
-        left(-master.get_analog(ANALOG_RIGHT_Y) + master.get_analog(ANALOG_LEFT_X));
-        right(master.get_analog(ANALOG_RIGHT_Y) + master.get_analog(ANALOG_LEFT_X));
-      }
+      left(master.get_analog(ANALOG_LEFT_Y) + master.get_analog(ANALOG_RIGHT_X));
+      right(master.get_analog(ANALOG_LEFT_Y) - master.get_analog(ANALOG_RIGHT_X));
     }else{
-      if(driver == 'k'){
-        left(master.get_analog(ANALOG_RIGHT_Y) + master.get_analog(ANALOG_RIGHT_X));
-        right(master.get_analog(ANALOG_RIGHT_Y) - master.get_analog(ANALOG_RIGHT_X));
-      }else{
-        left(-(master.get_analog(ANALOG_RIGHT_Y) + master.get_analog(ANALOG_RIGHT_X)));
-        right(master.get_analog(ANALOG_RIGHT_Y) - master.get_analog(ANALOG_RIGHT_X));
-      }
+      left(master.get_analog(ANALOG_RIGHT_Y) + master.get_analog(ANALOG_RIGHT_X));
+      right(master.get_analog(ANALOG_RIGHT_Y) - master.get_analog(ANALOG_RIGHT_X));
     }
   }
 }

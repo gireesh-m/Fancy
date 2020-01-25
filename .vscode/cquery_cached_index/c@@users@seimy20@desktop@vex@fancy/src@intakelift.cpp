@@ -1,6 +1,6 @@
 #include "main.h"
 
-Motor intakelift(INTAKELIFT, MOTOR_GEARSET_18, 0, MOTOR_ENCODER_DEGREES);
+Motor intakelift(INTAKELIFT, MOTOR_GEARSET_36, 0, MOTOR_ENCODER_DEGREES);
 
 bool moving = false;
 int stopPosition = 0;
@@ -15,7 +15,7 @@ void liftTask(void* parameter){
   while(1) {
     switch(lifting){
       case -1:
-        lift(120);
+        lift(60);
         break;
       case 0:
         lift(0);
@@ -28,16 +28,15 @@ void liftTask(void* parameter){
   }
 }
 
+double liftHeight(){
+  return(intakelift.get_position());
+}
+
 void lift(int vel){
   if(vel == 0){
     intakelift.move(fminf(-1 * (intakelift.get_position() - stopPosition), 127));
   }else{
-    if(dir == 1){
-      intakelift.move(vel);
-    }
-    else if(dir == -1 && intakelift.get_position() > -200){
-      intakelift.move(vel);
-    }
+    intakelift.move(vel);
   }
 }
 

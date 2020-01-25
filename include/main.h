@@ -53,7 +53,7 @@
 #define LEFTREAR 9
 #define RIGHTFRONT 20
 #define RIGHTREAR 19
-#define INTAKELEFT 7
+#define INTAKELEFT 6
 #define INTAKERIGHT 17
 #define INTAKELIFT 8
 #define RAMP 18
