@@ -2,9 +2,7 @@
 #define _INTAKE_H_
 
 void intake(int vel);
-void intakeAsync();
-void outtakeAsync();
-void endtakeAsync();
+void intakeAsync(int vel);
 void intakeTask(void* parameter);
 void intakeOp();
 

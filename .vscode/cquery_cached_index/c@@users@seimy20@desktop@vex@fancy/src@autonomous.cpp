@@ -1,36 +1,53 @@
 #include "main.h"
 
 //definition of a tile in encoder ticks
-#define TL *281
+#define TL *846
 
 void start(){
   liftAsync(1);
-  delay(2000);
+  delay(2300);
+  intakeAsync(-100);
+  delay(1000);
   liftAsync(-1);
   delay(1500);
   liftAsync(0);
+  intakeAsync(0);
 }
 
 void farSideBlue(){
   start();
-  drive(1.1 TL);
-
+  setSpeed(60);
+  driveAsync(0.8 TL);
+  setSpeed(60);
+  while(drivePos() < 0.7 TL) delay(20);
+  intakeAsync(100);
+  driveAsync(1.1 TL);
+  setSpeed(60);
+  while(drivePos() < 1 TL) delay(20);
+  delay(200);
+  intakeAsync(0);
+  turn(230);
+  driveAsync(1.5 TL);
+  setSpeed(60);
+  while(drivePos() < 1.3 TL) delay(20);
+  /*intakeAsync(127);
+  drive(0.5 TL);
+  delay(200);
+  intakeAsync(0);
+  drive(-1 TL);
+  turn(50);
+  drive(0.5 TL);*/
+  delay(100);
+  raiseRamp();
+  intakeAsync(-20);
+  driveAsync(-0.4 TL);
+  setSpeed(40);
+  while(drivePos() > -0.4 TL) delay(20);
 }
 
 void nearSideBlue(){
-  start();
-  drive(1.4 TL);
-  delay(3000);
-  turn(150);
-  drive(1.6 TL);
-  endtakeAsync();
-  delay(50);
-  raiseRamp();
-  /*turn(-50);
-  drive(1.6 TL);
-  endtakeAsync();
-  raiseRamp();
-  drive(-0.1 TL);*/
+  drive(1 TL);
+  drive(-1 TL);
 }
 
 void nearSideRed(){
@@ -39,7 +56,7 @@ void nearSideRed(){
   delay(1000);
   turn(-50);
   drive(-0.8 TL);
-  endtakeAsync();
+  intakeAsync(0);
   turn(-50);
   drive(1 TL);
   delay(1000);
@@ -51,7 +68,7 @@ void farSideRed(){
   drive(1.5 TL);
   delay(1000);
   turn(150);
-  endtakeAsync();
+  intakeAsync(0);
   drive(1.7 TL);
   raiseRamp();
   drive(-0.2 TL);
@@ -60,14 +77,14 @@ void farSideRed(){
 
 void firstFour(){
   start();
-  intakeAsync();
+  intakeAsync(127);
   drive(0.79 TL);
   delay(1000);
   drive(0.23 TL);
   delay(1000);
   drive(0.23 TL);
   delay(1000);
-  endtakeAsync();
+  intakeAsync(0);
 }
 
 void travelToBot(){
@@ -80,7 +97,7 @@ void travelToBot(){
 
 void bottomFour(){
   start();
-  intakeAsync();
+  intakeAsync(127);
   drive(0.51 TL);
   delay(1000);
   drive(0.23 TL);
@@ -89,7 +106,7 @@ void bottomFour(){
   delay(1000);
   drive(0.23 TL);
   delay(1000);
-  endtakeAsync();
+  intakeAsync(0);
 }
 
 void dropOff(){
@@ -107,9 +124,9 @@ void dropOff(){
 void autonomous() {
   reset(); // reset the drive encoders
 
-  /*Task drive_task(driveTask);
+  Task drive_task(driveTask);
   Task turn_task(turnTask);
-  Task intake_task(intakeTask);*/
+  Task intake_task(intakeTask);
   Task lift_task(liftTask);
 
   // switch(auton){
@@ -126,10 +143,10 @@ void autonomous() {
   //     dropOff();
   //     break;
   // }
-  start();
+  nearSideBlue();
 
-  /*drive_task.remove();
+  drive_task.remove();
   turn_task.remove();
-  intake_task.remove();*/
+  intake_task.remove();
   lift_task.remove();
 }

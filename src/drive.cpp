@@ -8,15 +8,15 @@ static int turnTarget = 0;
 static int maxSpeed = MAX_POWER;
 static int slant = 0;
 int backing = 0;
-bool tankDrive = true;
+bool tankDrive = false;
 
 
 
 //motors
-Motor left1(LEFTFRONT, MOTOR_GEARSET_18, 1, MOTOR_ENCODER_DEGREES);
-Motor left2(LEFTREAR, MOTOR_GEARSET_18, 1, MOTOR_ENCODER_DEGREES);
+Motor left1(LEFTFRONT, MOTOR_GEARSET_18, 0, MOTOR_ENCODER_DEGREES);
+Motor left2(LEFTREAR, MOTOR_GEARSET_18, 0, MOTOR_ENCODER_DEGREES);
 Motor right1(RIGHTFRONT, MOTOR_GEARSET_18, 1, MOTOR_ENCODER_DEGREES);
-Motor right2(RIGHTREAR, MOTOR_GEARSET_18, 0, MOTOR_ENCODER_DEGREES);
+Motor right2(RIGHTREAR, MOTOR_GEARSET_18, 1, MOTOR_ENCODER_DEGREES);
 
 
 // Sensors

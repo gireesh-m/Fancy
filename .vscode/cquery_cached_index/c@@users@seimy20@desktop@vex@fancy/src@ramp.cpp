@@ -3,11 +3,11 @@
 Motor rampMotor(RAMP, MOTOR_GEARSET_36, 0, MOTOR_ENCODER_DEGREES);
 static int moving = 0;
 static int dir = 0;
-bool tank_drive = true;
+bool tank_drive = false;
 bool pressed = false;
 
 bool isUp(){
-  if(rampMotor.get_position() <= -380){
+  if(rampMotor.get_position() <= -450){
     return(true);
   }
   return(false);
@@ -22,7 +22,7 @@ bool isDown(){
 
 void raiseRamp(){
   while(!isUp()){
-    ramp(-50);
+    ramp((rampMotor.get_position() - 450) * (7/45));
     delay(10);
   }
   moving = false;
