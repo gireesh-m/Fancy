@@ -8,7 +8,6 @@ static int turnTarget = 0;
 static int maxSpeed = MAX_POWER;
 static int slant = 0;
 int backing = 0;
-bool tankDrive = false;
 
 
 
@@ -292,27 +291,19 @@ void driveOp(){
   int lJoy = master.get_analog(ANALOG_LEFT_Y);
   int rJoy = master.get_analog(ANALOG_RIGHT_Y);
   if(master.get_digital_new_press(DIGITAL_A) && !backing){
-    backing = 50;
-  }
-  if(master.get_digital_new_press(DIGITAL_RIGHT)){
-    tankDrive = !tankDrive;
-    if(tankDrive){
-      master.set_text(1, 0, "TANK DRIVE  ");
-    }else{
-      master.set_text(1, 0, "ARCADE DRIVE");
-    }
+    backing = 100;
   }
   if(backing){
     left(-35);
     right(-35);
     backing--;
   }else{
-    if(tankDrive){
+    if(abs(master.get_analog(ANALOG_RIGHT_X)) > abs(master.get_analog(ANALOG_RIGHT_Y))){
       left(master.get_analog(ANALOG_LEFT_Y) + master.get_analog(ANALOG_RIGHT_X));
       right(master.get_analog(ANALOG_LEFT_Y) - master.get_analog(ANALOG_RIGHT_X));
     }else{
-      left(master.get_analog(ANALOG_RIGHT_Y) + master.get_analog(ANALOG_RIGHT_X));
-      right(master.get_analog(ANALOG_RIGHT_Y) - master.get_analog(ANALOG_RIGHT_X));
+      left(master.get_analog(ANALOG_LEFT_Y));
+      right(master.get_analog(ANALOG_LEFT_Y));
     }
   }
 }

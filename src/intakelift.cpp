@@ -1,6 +1,6 @@
 #include "main.h"
 
-Motor intakelift(INTAKELIFT, MOTOR_GEARSET_36, 0, MOTOR_ENCODER_DEGREES);
+Motor intakelift(INTAKELIFT, MOTOR_GEARSET_36, 1, MOTOR_ENCODER_DEGREES);
 
 bool moving = false;
 int stopPosition = 0;
@@ -15,13 +15,13 @@ void liftTask(void* parameter){
   while(1) {
     switch(lifting){
       case -1:
-        lift(60);
+        lift(-60);
         break;
       case 0:
         lift(0);
         break;
       case 1:
-        lift(-120);
+        lift(120);
         break;
     }
     delay(20);
@@ -47,13 +47,13 @@ void liftOp(){
     // down
     if(master.get_digital(DIGITAL_L2)){
       moving = true;
-      dir = 1;
-      vel = 60;
+      dir = -1;
+      vel = -60;
     // up
     }else if(master.get_digital(DIGITAL_L1)){
       moving = true;
-      dir = -1;
-      vel = -120;
+      dir = 1;
+      vel = 120;
     }else{
       moving = false;
       vel = 0;

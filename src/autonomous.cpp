@@ -5,52 +5,121 @@
 
 void start(){
   liftAsync(1);
-  delay(2300);
-  intakeAsync(-100);
+  intakeAsync(-50);
   delay(1000);
+  intakeAsync(-100);
+  delay(500);
   liftAsync(-1);
-  delay(1500);
-  liftAsync(0);
   intakeAsync(0);
+  delay(1100);
+  liftAsync(0);
 }
 
-void farSideBlue(){
-  start();
-  setSpeed(60);
-  driveAsync(0.8 TL);
-  setSpeed(60);
-  while(drivePos() < 0.7 TL) delay(20);
-  intakeAsync(100);
-  driveAsync(1.1 TL);
-  setSpeed(60);
-  while(drivePos() < 1 TL) delay(20);
-  delay(200);
-  intakeAsync(0);
-  turn(230);
-  driveAsync(1.5 TL);
-  setSpeed(60);
-  while(drivePos() < 1.3 TL) delay(20);
-  /*intakeAsync(127);
-  drive(0.5 TL);
-  delay(200);
-  intakeAsync(0);
-  drive(-1 TL);
-  turn(50);
-  drive(0.5 TL);*/
-  delay(100);
+void stack(){
   raiseRamp();
-  intakeAsync(-20);
+  drive(0.08 TL);
+  delay(15);
   driveAsync(-0.4 TL);
   setSpeed(40);
   while(drivePos() > -0.4 TL) delay(20);
 }
 
-void nearSideBlue(){
+void unprotBlue5(){
+  start();
+  intakeAsync(70);
+  setSpeed(60);
+  driveAsync(0.8 TL);
+  setSpeed(60);
+  while(drivePos() < 0.5 TL) delay(20);
+  intakeAsync(110);
+
+  turn(5);
+  driveAsync(1.1 TL);
+  setSpeed(60);
+  while(drivePos() < 0.9 TL) delay(20);
+  delay(600);
+  intakeAsync(0);
+
+  turn(180);
+  driveAsync(1.55 TL);
+  setSpeed(60);
+  while(drivePos() < 1.3 TL) delay(20);
+  delay(50);
+  drive(-0.05 TL);
+  delay(50);
+  stack();
+}
+
+void unprotBlue8(){
+  start();
+  intakeAsync(70);
+  setSpeed(60);
+  driveAsync(0.8 TL);
+  setSpeed(60);
+  while(drivePos() < 0.5 TL) delay(20);
+  intakeAsync(110);
+
+  //turn(5);
+  driveAsync(1.1 TL);
+  setSpeed(60);
+  while(drivePos() < 0.9 TL) delay(20);
+  delay(600);
+  intakeAsync(0);
+
+  drive(-0.6 TL);
+  turn(-60);
+  drive(-1.12 TL);
+  turn(60);
+  drive(-0.4 TL);
+  delay(20);
+
+  intakeAsync(110);
+  driveAsync(1.3 TL);
+  setSpeed(60);
+  while(drivePos() < 01.1 TL) delay(20);
+  delay(600);
+  intakeAsync(0);
+
+  turn(180);
+  driveAsync(1.55 TL);
+  setSpeed(60);
+  while(drivePos() < 1.3 TL) delay(20);
+  delay(50);
+  drive(-0.05 TL);
+  delay(50);
+  stack();
+}
+
+void unprotRed(){
+  start();
+  intakeAsync(70);
+  setSpeed(60);
+  driveAsync(0.8 TL);
+  setSpeed(60);
+  while(drivePos() < 0.5 TL) delay(20);
+  intakeAsync(110);
+  turn(5);
+  driveAsync(1.1 TL);
+  setSpeed(60);
+  while(drivePos() < 0.9 TL) delay(20);
+  delay(700);
+  intakeAsync(0);
+  turn(-165);
+  driveAsync(1.55 TL);
+  setSpeed(60);
+  while(drivePos() < 1.3 TL) delay(20);
+  delay(50);
+  drive(-0.05 TL);
+  delay(50);
+  stack();
+}
+
+void protBlue(){
   drive(1 TL);
   drive(-1 TL);
 }
 
-void nearSideRed(){
+void protSideRed(){
   start();
   drive(0.5 TL);
   delay(1000);
@@ -63,7 +132,7 @@ void nearSideRed(){
   raiseRamp();
 }
 
-void farSideRed(){
+void unprotSideRed(){
   start();
   drive(1.5 TL);
   delay(1000);
@@ -74,53 +143,15 @@ void farSideRed(){
   drive(-0.2 TL);
 }
 
-
-void firstFour(){
-  start();
-  intakeAsync(127);
-  drive(0.79 TL);
-  delay(1000);
-  drive(0.23 TL);
-  delay(1000);
-  drive(0.23 TL);
-  delay(1000);
-  intakeAsync(0);
-}
-
-void travelToBot(){
-  start();
-  drive(-1.2 TL);
-  turn(-90);
+void oneCube(){
   drive(1 TL);
-  turn(90);
-}
-
-void bottomFour(){
-  start();
-  intakeAsync(127);
-  drive(0.51 TL);
-  delay(1000);
-  drive(0.23 TL);
-  delay(1000);
-  drive(0.23 TL);
-  delay(1000);
-  drive(0.23 TL);
-  delay(1000);
-  intakeAsync(0);
-}
-
-void dropOff(){
-  start();
-  drive(-1.25 TL);
-  turn(-90);
   delay(500);
-  drive(0.46 TL);
+  drive(-1 TL);
   delay(500);
-  raiseRamp();
+  start();
+  turn(-100);
 }
 
-
-//This is beyond crappy
 void autonomous() {
   reset(); // reset the drive encoders
 
@@ -129,21 +160,7 @@ void autonomous() {
   Task intake_task(intakeTask);
   Task lift_task(liftTask);
 
-  // switch(auton){
-  //   case 0:
-  //     firstFour();
-  //     break;
-  //   case 1:
-  //     travelToBot();
-  //     break;
-  //   case 2:
-  //     bottomFour();
-  //     break;
-  //   case 3:
-  //     dropOff();
-  //     break;
-  // }
-  nearSideBlue();
+  unprotBlue8();
 
   drive_task.remove();
   turn_task.remove();

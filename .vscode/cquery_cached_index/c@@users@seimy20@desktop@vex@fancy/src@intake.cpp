@@ -33,7 +33,7 @@ void intakeOp(){
     }
 
     if(backing){
-      vel = -30;
+      vel = -40;
       backing--;
     }else if(master.get_digital(DIGITAL_R1)){
       vel = 127;
